@@ -49,14 +49,18 @@ To illustrate, here is an example function (using an object to hold our methods 
 
 This should be used anytime an element needs focus after an asynchronous event. Notice the use of the default `delay` of `0`. I have found this to work 99% of the time. Every so often a `delay` of `1000` will need to be used. I've seen no benefit in more milliseconds being used (or any value between `0` and `1000`).
 
+**ToDo**: Elements that aren't natively focusable (using the tab key) need their `tabindex` set to `-1`. This makes sure the element can be programmatically focused (using the `focus` method), but preserves its non-natively focusable state. Natively focusable elements become non-natively focusable when their `tabindex` is set to `-1`, which becomes a problem. Instead of testing for native focusability, `shiftFocus` should always apply and then remove the element's `tabindex` (or set it back to its original value). Due to older versions of IE using a camelCased syntax (`tabIndex`), the lowercase variant is ignored. Not a problem for a cross-browser DOM library, but without it, a conditional check needs to be made. I'll add this in soon.
+
 ---
 
 ### Trigger a Virtual Buffer Update ###
 
-[Juicy Studio][] publish an article that demonstrated, in JAWS 7.1, a forced VB update could be triggered by toggling the [value of a hidden input][updateBuffer]. This is a very handy technique for making sure JAWS recognizes page updates via AJAX. I found the technique was still valid in JAWS 12.
+[Juicy Studio][] published an article that demonstrated, in JAWS 7.1, a forced VB update could be triggered by toggling the [value of a hidden input][updateBuffer]. This is a very handy technique for making sure JAWS recognizes page updates via AJAX. I found the technique was still valid in JAWS 12.
   
 An example implementation (assuming [jQuery][] is included):
-          
+    
+    // Run myNameSpace.init() when DOM is ready
+    
     myNameSpace = {
         
         init: function() {
