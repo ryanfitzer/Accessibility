@@ -6,19 +6,20 @@ A disorganized list of tips and tricks I've found handy when developing accessib
 
 ## Index ##
 
-* [Focus Proper Element After an Asynchronous Event][]
-* [Trigger a Virtual Buffer Update][]
-* [Accessibility References][]
-* [Articles of Note][]
+* [Focus Proper Element After an Asynchronous Event](#focus-element)
+* [Trigger a Virtual Buffer Update](#trigger-vb-update)
+* [Accessibility References](#references)
+* [Articles of Note](#articles)
 
 ## Glossory ##
 
-* **AT** - [Assistive Technology](http://wikipedia.org/wiki/Assistive_Technology)
-* **SR** - [Screen Reader](http://wikipedia.org/wiki/Screen_Reader)
-* **VB** - Virtual Buffer
+AT: [Assistive Technology](http://wikipedia.org/wiki/Assistive_Technology)  
+SR: [Screen Reader](http://wikipedia.org/wiki/Screen_Reader)  
+VB: Virtual Buffer  
 
 ---
 
+<a name="focus-element"></a>
 ### Focus Proper Element After an Asynchronous Event ###
 
 Upon revealing/concealing and element (whether or not an AJAX request was made), a user's AT needs focus to be applied to new element that has been revealed (opening), or the original triggering element (closing) used to reveal the element. Some examples are:
@@ -53,6 +54,7 @@ This should be used anytime an element needs focus after an asynchronous event. 
 
 ---
 
+<a name="trigger-vb-update"></a>
 ### Trigger a Virtual Buffer Update ###
 
 [Juicy Studio][] published an article that demonstrated, in JAWS 7.1, a forced VB update could be triggered by toggling the [value of a hidden input][updateBuffer]. This is a very handy technique for making sure JAWS recognizes page updates via AJAX. I found the technique was still valid in JAWS 12.
@@ -115,6 +117,7 @@ Using this in conjunction with the `shiftFocus` method, JAWS can be forced to ac
 
 ---
 
+<a name="references"></a>
 #### Accessibility References ####
 
 * [Accessible Culture][] - In depth articles and tests for AT/Browser combinations.
@@ -122,6 +125,7 @@ Using this in conjunction with the `shiftFocus` method, JAWS can be forced to ac
 
 ---
 
+<a name="articles"></a>
 #### Articles of Note ####
 
 * [Using `role=alert` and `aria-live=assertive` to force JAWS to read focused content](http://www.accessibleculture.org/research-files/test-cases/aria/alert/index.html).
