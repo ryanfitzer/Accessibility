@@ -83,7 +83,7 @@ An example implementation (assuming [jQuery][] is included):
                 
             } else {
                 
-                me.input = $( <input/>', {
+                me.input = $( '<input/>', {
                     
                     id: 'virtualBufferUpdate',
                     
