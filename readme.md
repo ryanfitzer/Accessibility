@@ -92,7 +92,7 @@ An example implementation (assuming [jQuery][] is included):
                     value: '0'
                 });
     
-                me.appendTo( 'body' );
+                me.input.appendTo( 'body' );
                 me.inputReady = true;
                 $( document ).bind( 'updateBuffer', $.proxy( me, self ) );
     
