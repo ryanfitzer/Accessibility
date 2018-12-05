@@ -1,5 +1,7 @@
 # Javascript Accessibility Techniques #
 
+**This repository has been archived. Most, if not all, of this information is probably no longer accurate**
+
 A disorganized list of tips and tricks I've found handy when developing accessible javascript-heavy interactions. Any recommendations for techniques are welcomed (or pull requests).
 
 **Note**: these techniques are generalized due to the complexity of different brower/SR combinations. What works for one combo may not apply to another.
